@@ -1,0 +1,5006 @@
+ship = Tourist1
+version = 1.3.0
+description = BS = decouple CM, activate BPC¨0 = deploy chutes¨1 = toggle solar panels + antenna¨G = toggle gear
+type = VAB
+size = 7.09806395,37.6430817,2.87295151
+PART
+{
+	part = SSTU-SC-B-CM_4293995378
+	partName = Part
+	pos = -0.16609022,30.9014416,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = -0.16609022,30.9014416,-0.00322705507
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 1
+	sidx = 0
+	sqor = 0
+	sepI = 0
+	attm = 0
+	modCost = 6625
+	modMass = 0
+	modSize = 0,0,0
+	link = SSTU-SC-GEN-PDC_4294184928
+	link = SSTU-SC-B-BPC_4293894108
+	attN = top,SSTU-SC-B-BPC_4293894108
+	attN = bottom2,SSTU-SC-GEN-PDC_4294184928
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUModularParachute
+		isEnabled = True
+		chutePersistence = RETRACTED
+		hasJettisonedMainCap = False
+		hasJettisonedDrogueCap = False
+		drogueSafetyAlt = 2500
+		mainSafetyAlt = 500
+		stagingEnabled = False
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			deployChuteAction
+			{
+				actionGroup = None
+			}
+			cutChuteAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUModularHeatShield
+		isEnabled = True
+		currentShieldType = Heavy
+		currentDiameter = 1.25
+		initializedResources = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUAnimateLight
+		isEnabled = True
+		progress = 0
+		statePersistence = OFF
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			enableLightsAction
+			{
+				actionGroup = Light
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUAnimateLight
+		isEnabled = True
+		progress = 0
+		statePersistence = OFF
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			enableLightsAction
+			{
+				actionGroup = Light
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		hibernation = False
+		hibernateOnWarp = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			HibernateToggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		authorityLimiter = 100
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CycleAction
+			{
+				actionGroup = None
+			}
+			Activate
+			{
+				actionGroup = None
+			}
+			Deactivate
+			{
+				actionGroup = None
+			}
+			Toggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleRCS
+		isEnabled = True
+		rcsEnabled = True
+		thrustPercentage = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		enableX = True
+		enableY = True
+		enableZ = True
+		useThrottle = False
+		fullThrust = False
+		stagingEnabled = False
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceExperiment
+		isEnabled = True
+		Deployed = False
+		Inoperable = False
+		cooldownToGo = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+			}
+			ResetAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CollectAllAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FlagDecal
+		isEnabled = True
+		flagDisplayed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDockingNode
+		isEnabled = True
+		crossfeed = True
+		stagingEnabled = False
+		state = Ready
+		dockUId = 0
+		dockNodeIdx = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			UndockAction
+			{
+				actionGroup = None
+			}
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+			EnableXFeedAction
+			{
+				actionGroup = None
+			}
+			DisableXFeedAction
+			{
+				actionGroup = None
+			}
+			ToggleXFeedAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUNodeFairing
+		isEnabled = True
+		editorTransparency = True
+		numOfSections = 1
+		guiTopDiameter = -1
+		guiBottomDiameter = 2.5
+		currentTextureSet = Fairings-A
+		generateColliders = False
+		fairingJettisoned = False
+		fairingCreated = True
+		fairingEnabled = True
+		fairingForceDisabled = False
+		customColor1 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor2 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor3 = (0.615686297, 0.490196079, 0.337254912, 0.125490203)
+		initializedColors = True
+		persistentDataString = -0.59632,-0.8813,1.25,1.25
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			jettisonAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = MechJebCore
+		isEnabled = True
+		running = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnOrbitProgradeAction
+			{
+				actionGroup = None
+			}
+			OnOrbitRetrogradeAction
+			{
+				actionGroup = None
+			}
+			OnOrbitNormalAction
+			{
+				actionGroup = None
+			}
+			OnOrbitAntinormalAction
+			{
+				actionGroup = None
+			}
+			OnOrbitRadialInAction
+			{
+				actionGroup = None
+			}
+			OnOrbitRadialOutAction
+			{
+				actionGroup = None
+			}
+			OnKillRotationAction
+			{
+				actionGroup = None
+			}
+			OnDeactivateSmartASSAction
+			{
+				actionGroup = None
+			}
+			OnPanicAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronOffAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronKeepVertAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronZeroSpeedAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronPlusOneSpeedAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronMinusOneSpeedAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronToggleHSAction
+			{
+				actionGroup = None
+			}
+			OnAscentAPToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		MechJebLocalSettings
+		{
+			MechJebModuleMenu
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentGuidance
+			{
+				unlockParts = 
+				unlockTechs = generalRocketry
+			}
+			MechJebModuleAscentNavBall
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentPathEditor
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAttitudeAdjustment
+			{
+				unlockParts = 
+				unlockTechs = basicRocketry
+			}
+			MechJebModuleCustomWindowEditor
+			{
+				unlockParts = 
+				unlockTechs = engineering101
+			}
+			MechJebModuleDebugArrows
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleDockingAutopilot
+			{
+				forceRol = False
+				overrideSafeDistance = False
+				overrideTargetSize = False
+				unlockParts = 
+				unlockTechs = 
+				rol
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleDockingGuidance
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleInfoItems
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleLandingAutopilot
+			{
+				deployGears = True
+				deployChutes = True
+				rcsAdjustment = True
+				unlockParts = 
+				unlockTechs = 
+				touchdownSpeed
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				limitGearsStage
+				{
+					val = 0
+					_text = 0
+				}
+				limitChutesStage
+				{
+					val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleLandingGuidance
+			{
+				landingSiteIdx = 0
+				unlockParts = 
+				unlockTechs = generalRocketry
+			}
+			MechJebModuleLandingPredictions
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleManeuverPlanner
+			{
+				unlockParts = 
+				unlockTechs = basicRocketry
+			}
+			MechJebModuleNodeEditor
+			{
+				unlockParts = 
+				unlockTechs = basicRocketry
+			}
+			MechJebModuleNodeExecutor
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleRCSBalancerWindow
+			{
+				unlockParts = 
+				unlockTechs = basicRocketry
+			}
+			MechJebModuleRendezvousAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleRendezvousAutopilotWindow
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleRendezvousGuidance
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleRoverController
+			{
+				ControlHeading = False
+				ControlSpeed = False
+				BrakeOnEject = False
+				BrakeOnEnergyDepletion = False
+				WarpToDaylight = True
+				StabilityControl = False
+				LimitAcceleration = False
+				unlockParts = 
+				unlockTechs = 
+				heading
+				{
+					_val = 0
+					_text = 0
+				}
+				speed
+				{
+					_val = 10
+					_text = 10
+				}
+			}
+			MechJebModuleRoverWindow
+			{
+				unlockParts = 
+				unlockTechs = fieldScience
+			}
+			MechJebModuleScript
+			{
+				minifiedGUI = False
+				selectedSlot = 0
+				selectedMemorySlotType = 0
+				activeSavepoint = -1
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSettings
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSmartASS
+			{
+				mode = ORBITAL
+				target = OFF
+				advReference = INERTIAL
+				advDirection = FORWARD
+				forceRol = False
+				forcePitch = True
+				forceYaw = True
+				unlockParts = 
+				unlockTechs = engineering101
+				srfHdg
+				{
+					_val = 90
+					_text = 90
+				}
+				srfPit
+				{
+					_val = 90
+					_text = 90
+				}
+				srfRol
+				{
+					_val = 0
+					_text = 0
+				}
+				srfVelYaw
+				{
+					_val = 0
+					_text = 0
+				}
+				srfVelPit
+				{
+					_val = 0
+					_text = 0
+				}
+				srfVelRol
+				{
+					_val = 0
+					_text = 0
+				}
+				rol
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleSmartRcs
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSpaceplaneAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSpaceplaneGuidance
+			{
+				runwayIndex = 0
+				unlockParts = 
+				unlockTechs = generalRocketry
+			}
+			MechJebModuleStageStats
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleTargetController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleThrustWindow
+			{
+				autostageSavedState = False
+				unlockParts = 
+				unlockTechs = basicRocketry
+			}
+			MechJebModuleTranslatron
+			{
+				unlockParts = 
+				unlockTechs = basicRocketry
+				trans_spd
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleWarpHelper
+			{
+				unlockParts = 
+				unlockTechs = basicRocketry
+				phaseAngle
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleWaypointWindow
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleWaypointHelpWindow
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			ModExtensionDemo
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleCustomInfoWindow
+			{
+			}
+			MechJebModuleCustomInfoWindow
+			{
+			}
+			MechJebModuleCustomInfoWindow
+			{
+			}
+			MechJebModuleCustomInfoWindow
+			{
+			}
+			MechJebModuleWarpController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSolarPanelController
+			{
+				prev_ShouldOpenSolarPanels = False
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleThrustController
+			{
+				limitThrottle = False
+				limiterMinThrottle = False
+				electricThrottle = False
+				unlockParts = 
+				unlockTechs = 
+				maxThrottle
+				{
+					_val = 1
+					_text = 100
+				}
+				minThrottle
+				{
+					_val = 0.050000000000000003
+					_text = 5
+				}
+				electricThrottleLo
+				{
+					_val = 0.050000000000000003
+					_text = 5
+				}
+				electricThrottleHi
+				{
+					_val = 0.14999999999999999
+					_text = 15
+				}
+			}
+			MechJebModuleRCSController
+			{
+				unlockParts = 
+				unlockTechs = 
+				Tf
+				{
+					_val = 1
+					_text = 1
+				}
+				Kp
+				{
+					_val = 0.125
+					_text = 0.125
+				}
+				Ki
+				{
+					_val = 0.070000000000000007
+					_text = 0.07
+				}
+				Kd
+				{
+					_val = 0.53000000000000003
+					_text = 0.53
+				}
+			}
+			MechJebModuleRCSBalancer
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAttitudeController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleStagingController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleFlightRecorder
+			{
+				markUT = 0
+				deltaVExpended = 0
+				dragLosses = 0
+				gravityLosses = 0
+				steeringLosses = 0
+				markLAN = 0
+				markLatitude = 0
+				markLongitude = 0
+				markAltitude = 0
+				markBodyIndex = 1
+				maxDragGees = 0
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleFlightRecorderGraph
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = MechJebCore
+		isEnabled = True
+		running = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnOrbitProgradeAction
+			{
+				actionGroup = None
+			}
+			OnOrbitRetrogradeAction
+			{
+				actionGroup = None
+			}
+			OnOrbitNormalAction
+			{
+				actionGroup = None
+			}
+			OnOrbitAntinormalAction
+			{
+				actionGroup = None
+			}
+			OnOrbitRadialInAction
+			{
+				actionGroup = None
+			}
+			OnOrbitRadialOutAction
+			{
+				actionGroup = None
+			}
+			OnKillRotationAction
+			{
+				actionGroup = None
+			}
+			OnDeactivateSmartASSAction
+			{
+				actionGroup = None
+			}
+			OnPanicAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronOffAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronKeepVertAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronZeroSpeedAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronPlusOneSpeedAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronMinusOneSpeedAction
+			{
+				actionGroup = None
+			}
+			OnTranslatronToggleHSAction
+			{
+				actionGroup = None
+			}
+			OnAscentAPToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 450
+		maxAmount = 450
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Aerozine50
+		amount = 85
+		maxAmount = 85
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = NTO
+		amount = 85
+		maxAmount = 85
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Ablator
+		amount = 900
+		maxAmount = 900
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-GEN-PDC_4294184928
+	partName = Part
+	pos = -0.16609022,29.9701443,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-0.931297302,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 1
+	resPri = 0
+	dstg = 5
+	sidx = 0
+	sqor = 1
+	sepI = 1
+	attm = 0
+	modCost = 722.566528
+	modMass = 0.0314159468
+	modSize = 0,0,0
+	link = SSTU-SC-TANK-MFT-A_4294310440
+	attN = bottom,SSTU-SC-TANK-MFT-A_4294310440
+	attN = top,SSTU-SC-B-CM_4293995378
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUProceduralDecoupler
+		isEnabled = True
+		diameter = 2.5
+		height = 0.100000009
+		thickness = 0.200000018
+		hollowCollider = False
+		currentTextureSet = Decoupler-A
+		customColor1 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor2 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor3 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		initializedColors = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-DC-D1
+		}
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = Abort
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SSTU-SC-TANK-MFT-A_4294310440
+	partName = Part
+	pos = -0.16609022,28.6701488,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-1.29999924,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 1
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 0
+	modCost = 3781.3623
+	modMass = -3.1671505
+	modSize = 0,0,0
+	link = SSTU-SC-ENG-SuperDraco-L_4294242044
+	link = landingLeg1_4293969814
+	link = landingLeg1_4293814766
+	link = landingLeg1_4293814630
+	link = landingLeg1_4293814494
+	link = HighGainAntenna5_4292200904
+	attN = top,SSTU-SC-GEN-PDC_4294184928
+	attN = bottom,SSTU-SC-ENG-SuperDraco-L_4294242044
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUVolumeContainer
+		isEnabled = True
+		volume = 12250
+		initializedResources = True
+		persistentData = light,Hypergolic,1,Aerozine50,1,NTO,1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUModularFuelTank
+		isEnabled = True
+		currentTankSet = 1.00x
+		currentTankType = MFT-C-1-0
+		currentNoseType = Mount-Tank-None
+		currentMountType = Mount-Tank-None
+		currentTankDiameter = 2.5
+		currentTankVerticalScale = 1
+		currentNoseTexture = 
+		currentTankTexture = MFT-Silver
+		currentMountTexture = 
+		initializedResources = True
+		noseModuleData = 1,1,1,1;1,1,1,1;1,1,1,1
+		bodyModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.7176471,0.7176471,0.7176471,0.6901961;0.5019608,0.5019608,0.5019608,0.1254902
+		mountModuleData = 1,1,1,1;1,1,1,1;1,1,1,1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-MFT-D1
+			upgrade = SSTU-MFT-D2
+			upgrade = SSTU-MFT-D3
+			upgrade = SSTU-MFT-D5
+			upgrade = SSTU-MFT-M1
+		}
+	}
+	MODULE
+	{
+		name = SSTUFlagDecal
+		isEnabled = True
+		flagEnabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSelectableNodes
+		isEnabled = True
+		currentlyEnabled = False
+		initialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUResourceBoiloff
+		isEnabled = True
+		lastUpdateTime = -1
+		lastEffective = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			EnableAction
+			{
+				actionGroup = None
+			}
+			DisableAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCollisionHandler
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = Aerozine50
+		amount = 5665.625
+		maxAmount = 5665.625
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = NTO
+		amount = 5665.625
+		maxAmount = 5665.625
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-ENG-SuperDraco-L_4294242044
+	partName = Part
+	pos = -0.16609022,26.9201488,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-1.75,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 7
+	sidx = 0
+	sqor = 2
+	sepI = 1
+	attm = 0
+	modCost = 800
+	modMass = 1.27999997
+	modSize = 0,0,0
+	link = SSTU-ST-GEN-DSP-SMB-M_4294153012
+	link = SSTU-ST-GEN-DSP-SMB-M_4293890114
+	link = SSTU-ST-GEN-DSP-SMB-M_4290305426
+	link = SSTU-ST-GEN-DSP-SMB-M_4293889804
+	link = SSTU-SC-GEN-ISDC_4294144268
+	attN = top,SSTU-SC-TANK-MFT-A_4294310440
+	attN = bottom,SSTU-SC-GEN-ISDC_4294144268
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUModularEngineCluster
+		isEnabled = True
+		currentEngineSpacing = 0.25
+		currentEngineVerticalOffset = 0.099999994
+		currentEngineLayoutName = FiveCross
+		currentEngineRotation = 0
+		currentMountName = Mount-Skeletal-S
+		currentMountDiameter = 2.5
+		currentMountTexture = Mount-A
+		mountModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.9254902,0.9254902,0.9254902,0.1254902;0.8901961,0.6862745,0.3137255,1
+		fairingInitialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			LockAction
+			{
+				actionGroup = None
+			}
+			FreeAction
+			{
+				actionGroup = None
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUNodeFairing
+		isEnabled = True
+		editorTransparency = True
+		numOfSections = 4
+		guiTopDiameter = 2.5
+		guiBottomDiameter = 2.5
+		currentTextureSet = Fairings-D
+		generateColliders = False
+		fairingJettisoned = False
+		fairingCreated = True
+		fairingEnabled = True
+		fairingForceDisabled = False
+		customColor1 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor2 = (0.305882365, 0.305882365, 0.305882365, 0.125490203)
+		customColor3 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		initializedColors = True
+		persistentDataString = 0.3,-0.8325,1.25,1.25
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			jettisonAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUAnimateEngineHeat
+		isEnabled = True
+		currentHeat = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSelectableNodes
+		isEnabled = True
+		currentlyEnabled = False
+		initialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCollisionHandler
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SSTU-ST-GEN-DSP-SMB-M_4294153012
+	partName = Part
+	pos = -1.21241188,27.3871174,0.600867033
+	attPos = 0,0,0
+	attPos0 = -1.04632163,0.466968536,0.604094088
+	rot = -1.15701075E-08,0.258818924,-4.31802398E-08,0.965925932
+	attRot = 0,0,0,1
+	attRot0 = -1.15701075E-08,0.258818924,-4.31802398E-08,0.965925932
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = SSTU-ST-GEN-DSP-SMB-M_4293890114
+	srfN = srfAttach,SSTU-SC-ENG-SuperDraco-L_4294242044
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUAnimateControlled
+		isEnabled = True
+		animationMaxDeploy = 1
+		persistentState = STOPPED_START
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSolarPanelDeployable
+		isEnabled = True
+		savedAnimationState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			extendAction
+			{
+				actionGroup = None
+			}
+			retractAction
+			{
+				actionGroup = None
+			}
+			toggleAction
+			{
+				actionGroup = Custom01
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SSTU-ST-GEN-DSP-SMB-M_4293890114
+	partName = Part
+	pos = 0.88023138,27.3871174,-0.607321262
+	attPos = 0,0,0
+	attPos0 = 1.04632163,0.466968536,-0.604094207
+	rot = -4.31802398E-08,0.965925932,1.15701093E-08,-0.258818954
+	attRot = 0,0,0,1
+	attRot0 = -4.31802398E-08,0.965925932,1.15701093E-08,-0.258818954
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = SSTU-ST-GEN-DSP-SMB-M_4294153012
+	srfN = srfAttach,SSTU-SC-ENG-SuperDraco-L_4294242044
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUAnimateControlled
+		isEnabled = True
+		animationMaxDeploy = 1
+		persistentState = STOPPED_START
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSolarPanelDeployable
+		isEnabled = True
+		savedAnimationState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			extendAction
+			{
+				actionGroup = None
+			}
+			retractAction
+			{
+				actionGroup = None
+			}
+			toggleAction
+			{
+				actionGroup = Custom01
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SSTU-ST-GEN-DSP-SMB-M_4290305426
+	partName = Part
+	pos = -1.21404898,27.3902874,-0.608266413
+	attPos = 0,0,0
+	attPos0 = -1.04795873,0.47013855,-0.605039358
+	rot = 6.0332459E-09,0.258819133,-2.25163728E-08,-0.965925872
+	attRot = 0,0,0,1
+	attRot0 = 6.0332459E-09,0.258819133,-2.25163728E-08,-0.965925872
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = SSTU-ST-GEN-DSP-SMB-M_4293889804
+	srfN = srfAttach,SSTU-SC-ENG-SuperDraco-L_4294242044
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUAnimateControlled
+		isEnabled = True
+		animationMaxDeploy = 1
+		persistentState = STOPPED_START
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSolarPanelDeployable
+		isEnabled = True
+		savedAnimationState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			extendAction
+			{
+				actionGroup = None
+			}
+			retractAction
+			{
+				actionGroup = None
+			}
+			toggleAction
+			{
+				actionGroup = Custom01
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SSTU-ST-GEN-DSP-SMB-M_4293889804
+	partName = Part
+	pos = 0.881868482,27.3902874,0.601812184
+	attPos = 0,0,0
+	attPos0 = 1.04795873,0.47013855,0.605039239
+	rot = -2.25163728E-08,-0.965925872,-6.03324501E-09,-0.258819103
+	attRot = 0,0,0,1
+	attRot0 = -2.25163728E-08,-0.965925872,-6.03324501E-09,-0.258819103
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = SSTU-ST-GEN-DSP-SMB-M_4290305426
+	srfN = srfAttach,SSTU-SC-ENG-SuperDraco-L_4294242044
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUAnimateControlled
+		isEnabled = True
+		animationMaxDeploy = 1
+		persistentState = STOPPED_START
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSolarPanelDeployable
+		isEnabled = True
+		savedAnimationState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			extendAction
+			{
+				actionGroup = None
+			}
+			retractAction
+			{
+				actionGroup = None
+			}
+			toggleAction
+			{
+				actionGroup = Custom01
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = landingLeg1_4293969814
+	partName = Part
+	pos = 0.696708918,27.4976292,-0.866026163
+	attPos = 0,0,0
+	attPos0 = 0.862799168,-1.17251968,-0.862799108
+	rot = -0.07323654,0.90680325,0.17680864,0.375610203
+	attRot = 0,0,0,1
+	attRot0 = -0.07323654,0.90680325,0.17680864,0.375610203
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = ForceHeaviest
+	rigidAttachment = False
+	istg = 1
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = landingLeg1_4293814766
+	sym = landingLeg1_4293814630
+	sym = landingLeg1_4293814494
+	srfN = srfAttach,SSTU-SC-TANK-MFT-A_4294310440
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleWheelBase
+		isEnabled = True
+		wheelType = LEG
+		isGrounded = False
+		autoFriction = False
+		frictionMultiplier = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActAutoFrictionToggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelSuspension
+		isEnabled = True
+		springTweakable = 1
+		damperTweakable = 1
+		suspensionPos = (-1, -1, -1)
+		autoBoost = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelDeployment
+		isEnabled = True
+		shieldedCanDeploy = False
+		stateDisplayString = Retracted
+		stateString = Retracted
+		stagingEnabled = True
+		position = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionToggle
+			{
+				actionGroup = Gear
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelLock
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelBogey
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelDamage
+		isEnabled = True
+		isDamaged = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = landingLeg1_4293814766
+	partName = Part
+	pos = -1.02888918,27.4976292,-0.866026223
+	attPos = 0,0,0
+	attPos0 = -0.862798989,-1.17251968,-0.862799168
+	rot = 0.0732365325,0.90680325,0.17680864,-0.375610203
+	attRot = 0,0,0,1
+	attRot0 = 0.0732365325,0.90680325,0.17680864,-0.375610203
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = ForceHeaviest
+	rigidAttachment = False
+	istg = 1
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = landingLeg1_4293969814
+	sym = landingLeg1_4293814630
+	sym = landingLeg1_4293814494
+	srfN = srfAttach,SSTU-SC-TANK-MFT-A_4294310440
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleWheelBase
+		isEnabled = True
+		wheelType = LEG
+		isGrounded = False
+		autoFriction = False
+		frictionMultiplier = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActAutoFrictionToggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelSuspension
+		isEnabled = True
+		springTweakable = 1
+		damperTweakable = 1
+		suspensionPos = (-1, -1, -1)
+		autoBoost = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelDeployment
+		isEnabled = True
+		shieldedCanDeploy = False
+		stateDisplayString = Retracted
+		stateString = Retracted
+		stagingEnabled = True
+		position = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionToggle
+			{
+				actionGroup = Gear
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelLock
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelBogey
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelDamage
+		isEnabled = True
+		isDamaged = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = landingLeg1_4293814630
+	partName = Part
+	pos = -1.0288893,27.4976292,0.859572113
+	attPos = 0,0,0
+	attPos0 = -0.862799108,-1.17251968,0.862799168
+	rot = 0.17680864,0.375610173,0.0732365325,-0.90680325
+	attRot = 0,0,0,1
+	attRot0 = 0.17680864,0.375610173,0.0732365325,-0.90680325
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = ForceHeaviest
+	rigidAttachment = False
+	istg = 1
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = landingLeg1_4293969814
+	sym = landingLeg1_4293814766
+	sym = landingLeg1_4293814494
+	srfN = srfAttach,SSTU-SC-TANK-MFT-A_4294310440
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleWheelBase
+		isEnabled = True
+		wheelType = LEG
+		isGrounded = False
+		autoFriction = False
+		frictionMultiplier = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActAutoFrictionToggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelSuspension
+		isEnabled = True
+		springTweakable = 1
+		damperTweakable = 1
+		suspensionPos = (-1, -1, -1)
+		autoBoost = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelDeployment
+		isEnabled = True
+		shieldedCanDeploy = False
+		stateDisplayString = Retracted
+		stateString = Retracted
+		stagingEnabled = True
+		position = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionToggle
+			{
+				actionGroup = Gear
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelLock
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelBogey
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelDamage
+		isEnabled = True
+		isDamaged = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = landingLeg1_4293814494
+	partName = Part
+	pos = 0.696708918,27.4976292,0.859571993
+	attPos = 0,0,0
+	attPos0 = 0.862799108,-1.17251968,0.862799048
+	rot = 0.17680864,-0.375610203,-0.0732365325,-0.90680325
+	attRot = 0,0,0,1
+	attRot0 = 0.17680864,-0.375610203,-0.0732365325,-0.90680325
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = ForceHeaviest
+	rigidAttachment = False
+	istg = 1
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = landingLeg1_4293969814
+	sym = landingLeg1_4293814766
+	sym = landingLeg1_4293814630
+	srfN = srfAttach,SSTU-SC-TANK-MFT-A_4294310440
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleWheelBase
+		isEnabled = True
+		wheelType = LEG
+		isGrounded = False
+		autoFriction = False
+		frictionMultiplier = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActAutoFrictionToggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelSuspension
+		isEnabled = True
+		springTweakable = 1
+		damperTweakable = 1
+		suspensionPos = (-1, -1, -1)
+		autoBoost = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelDeployment
+		isEnabled = True
+		shieldedCanDeploy = False
+		stateDisplayString = Retracted
+		stateString = Retracted
+		stagingEnabled = True
+		position = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionToggle
+			{
+				actionGroup = Gear
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelLock
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelBogey
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelDamage
+		isEnabled = True
+		isDamaged = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SSTU-SC-B-BPC_4293894108
+	partName = Part
+	pos = -0.16609022,35.3840332,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,4.48258972,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 4
+	resPri = 0
+	dstg = 5
+	sidx = 0
+	sqor = 4
+	sepI = 4
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = bottom,SSTU-SC-B-CM_4293995378
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUAutoDepletionDecoupler
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			jettisonAction
+			{
+				actionGroup = None
+			}
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				active = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				active = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = False
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = MultiModeEngine
+		isEnabled = True
+		runningPrimary = True
+		autoSwitch = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ModeAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+			OnAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUAirstreamShield
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 70
+		maxAmount = 70
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = SSTUJettisonFuel
+		amount = 15
+		maxAmount = 15
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-GEN-ISDC_4294144268
+	partName = Part
+	pos = -0.16609022,25.8876476,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-1.03249967,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 9
+	sidx = 0
+	sqor = 3
+	sepI = 3
+	attm = 0
+	modCost = 193.829636
+	modMass = -0.941980064
+	modSize = 0,0,0
+	link = SSTU-SC-TANK-MFT-A_4294149216
+	attN = top,SSTU-SC-ENG-SuperDraco-L_4294242044
+	attN = bottom,SSTU-SC-TANK-MFT-A_4294149216
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUInterstageDecoupler
+		isEnabled = True
+		editorTransparency = True
+		generateColliders = False
+		currentHeight = 0.400000006
+		currentTopDiameter = 2.5
+		currentBottomDiameter = 2.5
+		currentTaperHeight = 0.400000006
+		currentEngineScale = 1
+		initializedResources = True
+		invertEngines = True
+		autoDecouple = False
+		currentTextureSet = Fairings-A
+		customColor1 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor2 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor3 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		initializedColors = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = False
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-DC-D1
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 10.000000149011612
+		maxAmount = 100
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-TANK-MFT-A_4294149216
+	partName = Part
+	pos = -0.16609022,21.9376469,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-3.94999409,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 11
+	sidx = -1
+	sqor = -1
+	sepI = 3
+	attm = 0
+	modCost = -4093.60156
+	modMass = -3.50571203
+	modSize = 0,0,0
+	link = SSTU-SC-ENG-J-2_4293779498
+	attN = top,SSTU-SC-GEN-ISDC_4294144268
+	attN = bottom,SSTU-SC-ENG-J-2_4293779498
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUVolumeContainer
+		isEnabled = True
+		volume = 36750.0039
+		initializedResources = True
+		persistentData = light,Hydrolox,1,LqdHydrogen,15,Oxidizer,1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUModularFuelTank
+		isEnabled = True
+		currentTankSet = 3.00x
+		currentTankType = MFT-C-3-0
+		currentNoseType = Mount-Tank-None
+		currentMountType = Mount-Tank-None
+		currentTankDiameter = 2.5
+		currentTankVerticalScale = 1.00000226
+		currentNoseTexture = 
+		currentTankTexture = MFT-Stripes6-Plain
+		currentMountTexture = 
+		initializedResources = True
+		noseModuleData = 1,1,1,1;1,1,1,1;1,1,1,1
+		bodyModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.9254902,0.9254902,0.9254902,0.1254902;0.5019608,0.5019608,0.5019608,0.1254902
+		mountModuleData = 1,1,1,1;1,1,1,1;1,1,1,1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-MFT-D1
+			upgrade = SSTU-MFT-D2
+			upgrade = SSTU-MFT-D3
+			upgrade = SSTU-MFT-D5
+			upgrade = SSTU-MFT-M1
+		}
+	}
+	MODULE
+	{
+		name = SSTUFlagDecal
+		isEnabled = True
+		flagEnabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSelectableNodes
+		isEnabled = True
+		currentlyEnabled = False
+		initialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUResourceBoiloff
+		isEnabled = True
+		lastUpdateTime = -1
+		lastEffective = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			EnableAction
+			{
+				actionGroup = None
+			}
+			DisableAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCollisionHandler
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = LqdHydrogen
+		amount = 25495.31640625
+		maxAmount = 25495.31640625
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 1699.687744140625
+		maxAmount = 1699.687744140625
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-ENG-J-2_4293779498
+	partName = Part
+	pos = -0.16609022,17.1876545,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-4.74999237,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 5
+	resPri = 0
+	dstg = 11
+	sidx = 0
+	sqor = 5
+	sepI = 3
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = SSTU-SC-GEN-ISDC_4294353024
+	attN = top,SSTU-SC-TANK-MFT-A_4294149216
+	attN = bottom,SSTU-SC-GEN-ISDC_4294353024
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUModularEngineCluster
+		isEnabled = True
+		currentEngineSpacing = 0
+		currentEngineVerticalOffset = 0
+		currentEngineLayoutName = Single
+		currentEngineRotation = 0
+		currentMountName = Mount-S-IVB
+		currentMountDiameter = 2.5
+		currentMountTexture = Mount-A
+		mountModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.8901961,0.6862745,0.3137255,1;0.5019608,0.5019608,0.5019608,1
+		fairingInitialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			LockAction
+			{
+				actionGroup = None
+			}
+			FreeAction
+			{
+				actionGroup = None
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUNodeFairing
+		isEnabled = True
+		editorTransparency = True
+		numOfSections = 4
+		guiTopDiameter = 2.5
+		guiBottomDiameter = 2.5
+		currentTextureSet = Fairings-A
+		generateColliders = False
+		fairingJettisoned = False
+		fairingCreated = True
+		fairingEnabled = True
+		fairingForceDisabled = False
+		customColor1 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor2 = (0.305882365, 0.305882365, 0.305882365, 0.125490203)
+		customColor3 = (0.615686297, 0.490196079, 0.337254912, 0.125490203)
+		initializedColors = True
+		persistentDataString = 0.75,-2.1733,1.25,1.25
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			jettisonAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUModelConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUAnimateEngineHeat
+		isEnabled = True
+		currentHeat = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSelectableNodes
+		isEnabled = True
+		currentlyEnabled = False
+		initialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCollisionHandler
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SSTU-SC-GEN-ISDC_4294353024
+	partName = Part
+	pos = -0.16609022,14.8143559,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-2.37329912,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 6
+	resPri = 0
+	dstg = 13
+	sidx = 0
+	sqor = 6
+	sepI = 6
+	attm = 0
+	modCost = 193.829636
+	modMass = -0.941980064
+	modSize = 0,0,0
+	link = SSTU-SC-TANK-MFT-A_4294352862
+	attN = top,SSTU-SC-ENG-J-2_4293779498
+	attN = bottom,SSTU-SC-TANK-MFT-A_4294352862
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUInterstageDecoupler
+		isEnabled = True
+		editorTransparency = True
+		generateColliders = False
+		currentHeight = 0.400000006
+		currentTopDiameter = 2.5
+		currentBottomDiameter = 2.5
+		currentTaperHeight = 0.400000006
+		currentEngineScale = 1
+		initializedResources = True
+		invertEngines = True
+		autoDecouple = False
+		currentTextureSet = Fairings-A
+		customColor1 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor2 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor3 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		initializedColors = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = False
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-DC-D1
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 10.000000149011612
+		maxAmount = 100
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-TANK-MFT-A_4294352862
+	partName = Part
+	pos = -0.16609022,8.98935699,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-5.82499647,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 6
+	resPri = 0
+	dstg = 15
+	sidx = -1
+	sqor = -1
+	sepI = 6
+	attm = 0
+	modCost = 2548.44727
+	modMass = 1.0714426
+	modSize = 0,0,0
+	link = SSTU-SC-ENG-H1_4293674258
+	link = SSTU-SC-GEN-RBDC_4293627030
+	link = SSTU-SC-GEN-RBDC_4293539640
+	attN = top,SSTU-SC-GEN-ISDC_4294353024
+	attN = bottom,SSTU-SC-ENG-H1_4293674258
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUVolumeContainer
+		isEnabled = True
+		volume = 55124.9766
+		initializedResources = True
+		persistentData = light,LFO,1,LiquidFuel,9,Oxidizer,11
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUModularFuelTank
+		isEnabled = True
+		currentTankSet = 4.50x
+		currentTankType = MFT-A-4-5
+		currentNoseType = Mount-Tank-None
+		currentMountType = Mount-Tank-None
+		currentTankDiameter = 2.5
+		currentTankVerticalScale = 0.999998868
+		currentNoseTexture = 
+		currentTankTexture = MFT-Stripes2-Plain
+		currentMountTexture = 
+		initializedResources = True
+		noseModuleData = 1,1,1,1;1,1,1,1;1,1,1,1
+		bodyModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.3058824,0.3058824,0.3058824,0.1254902;0.5019608,0.5019608,0.5019608,0.1254902
+		mountModuleData = 1,1,1,1;1,1,1,1;1,1,1,1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-MFT-D1
+			upgrade = SSTU-MFT-D2
+			upgrade = SSTU-MFT-D3
+			upgrade = SSTU-MFT-D5
+			upgrade = SSTU-MFT-M1
+		}
+	}
+	MODULE
+	{
+		name = SSTUFlagDecal
+		isEnabled = True
+		flagEnabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSelectableNodes
+		isEnabled = True
+		currentlyEnabled = False
+		initialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUResourceBoiloff
+		isEnabled = True
+		lastUpdateTime = -1
+		lastEffective = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			EnableAction
+			{
+				actionGroup = None
+			}
+			DisableAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCollisionHandler
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 4589.15380859375
+		maxAmount = 4589.15380859375
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 5608.96630859375
+		maxAmount = 5608.96630859375
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-ENG-H1_4293674258
+	partName = Part
+	pos = -0.16609022,2.86432266,-0.00322705507
+	attPos = 0,0,0
+	attPos0 = 0,-6.12503195,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 8
+	resPri = 0
+	dstg = 15
+	sidx = 1
+	sqor = 8
+	sepI = 6
+	attm = 0
+	modCost = 6000
+	modMass = 4.91519976
+	modSize = 0,0,0
+	attN = top,SSTU-SC-TANK-MFT-A_4294352862
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = SSTUModularEngineCluster
+		isEnabled = True
+		currentEngineSpacing = 0
+		currentEngineVerticalOffset = 0
+		currentEngineLayoutName = Quad
+		currentEngineRotation = 0
+		currentMountName = Mount-Saturn-V
+		currentMountDiameter = 2.5
+		currentMountTexture = Mount-A
+		mountModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.3058824,0.3058824,0.3058824,0.1254902;0.1803922,0.1803922,0.1803922,0.1254902
+		fairingInitialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			LockAction
+			{
+				actionGroup = None
+			}
+			FreeAction
+			{
+				actionGroup = None
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUNodeFairing
+		isEnabled = True
+		editorTransparency = True
+		numOfSections = 1
+		guiTopDiameter = 2.5
+		guiBottomDiameter = 2.5
+		currentTextureSet = Fairings-A
+		generateColliders = False
+		fairingJettisoned = False
+		fairingCreated = False
+		fairingEnabled = True
+		fairingForceDisabled = True
+		customColor1 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor2 = (0.925490201, 0.925490201, 0.925490201, 0.125490203)
+		customColor3 = (0.615686297, 0.490196079, 0.337254912, 0.125490203)
+		initializedColors = True
+		persistentDataString = 0.5,-1,1.25,1.25
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			jettisonAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUModelConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUAnimateEngineHeat
+		isEnabled = True
+		currentHeat = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUSelectableNodes
+		isEnabled = True
+		currentlyEnabled = False
+		initialized = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCollisionHandler
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SSTU-SC-GEN-RBDC_4293627030
+	partName = Part
+	pos = 1.11777198,9.47624397,-0.0032267794
+	attPos = 0,0,0
+	attPos0 = 1.28386223,0.486886978,2.75671482E-07
+	rot = -2.20410908E-19,-1.34869913E-06,1.63987557E-13,1
+	attRot = 0,0,0,1
+	attRot0 = -2.20410908E-19,-1.34869913E-06,1.63987557E-13,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = True
+	istg = 7
+	resPri = 0
+	dstg = 17
+	sidx = 0
+	sqor = 7
+	sepI = 7
+	attm = 1
+	modCost = -449.84375
+	modMass = -0.072265625
+	modSize = 0,0,0
+	link = SSTU-SC-ENG-SRB-A_4293626902
+	sym = SSTU-SC-GEN-RBDC_4293539640
+	srfN = srfAttach,SSTU-SC-TANK-MFT-A_4294352862
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCustomRadialDecoupler
+		isEnabled = True
+		height = 12
+		diameter = 1.875
+		initializedResources = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-DC-D1
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnchoredDecoupler
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			EnableAction
+			{
+				actionGroup = None
+			}
+			DisableAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 21.09375
+		maxAmount = 21.09375
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-ENG-SRB-A_4293626902
+	partName = Part
+	pos = 2.18466163,9.46704292,-0.00322388858
+	attPos = 0,0,0
+	attPos0 = 0.441890121,-0.0092010498,8.27003532E-09
+	rot = 3.2395717E-14,1,3.57622491E-20,1.34869913E-06
+	attRot = 0,0,0,1
+	attRot0 = 1.96383274E-13,1,-8.68901535E-21,0
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = True
+	istg = 8
+	resPri = 0
+	dstg = 19
+	sidx = 0
+	sqor = 8
+	sepI = 7
+	attm = 1
+	modCost = 6591.96777
+	modMass = 5.43024445
+	modSize = 0,0,0
+	sym = SSTU-SC-ENG-SRB-A_4293539512
+	srfN = srfAttach,SSTU-SC-GEN-RBDC_4293627030
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 1
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-SC-ENG-SRB-GeneralRocketry
+			upgrade = SSTU-SC-ENG-SRB-HeavyRocketry
+			upgrade = SSTU-SC-ENG-SRB-HeavierRocketry
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			LockAction
+			{
+				actionGroup = None
+			}
+			FreeAction
+			{
+				actionGroup = None
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUModularBooster
+		isEnabled = True
+		currentVariantName = A
+		currentMainName = SRB-A-3
+		currentNoseName = SRB-Nosecone-4
+		currentNozzleName = Nozzle-SRB-A
+		currentDiameter = 1.875
+		currentGimbalOffset = 0
+		currentNoseTexture = Adapter-SLS
+		currentMainTexture = SRB-Striped2
+		currentNozzleTexture = SRB-Striped
+		noseModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.1803922,0.1803922,0.1803922,0.1254902;0.9254902,0.9254902,0.9254902,0.1254902
+		bodyModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.9254902,0.9254902,0.9254902,0.1254902;0.5019608,0.5019608,0.5019608,0.6901961
+		mountModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.1803922,0.1803922,0.1803922,0.1254902;0.9254902,0.9254902,0.9254902,0.1254902
+		initializedResources = True
+		thrustCurveData = 
+		presetCurveName = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-MSRB-D1
+			upgrade = SSTU-MSRB-D2
+			upgrade = SSTU-MSRB-D3
+			upgrade = SSTU-MSRB-D4
+		}
+	}
+	MODULE
+	{
+		name = SSTUVolumeContainer
+		isEnabled = True
+		volume = 31007.8125
+		initializedResources = True
+		persistentData = standard,custom,1,SolidFuel,1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCollisionHandler
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 5271.328125
+		maxAmount = 5271.328125
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-GEN-RBDC_4293539640
+	partName = Part
+	pos = -1.44995248,9.47624397,-0.00322721899
+	attPos = 0,0,0
+	attPos0 = -1.28386223,0.486886978,-1.63912773E-07
+	rot = 1.63987557E-13,1,2.1324278E-19,1.30498779E-06
+	attRot = 0,0,0,1
+	attRot0 = 1.63987557E-13,1,2.1324278E-19,1.30498779E-06
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = True
+	istg = 7
+	resPri = 0
+	dstg = 17
+	sidx = 0
+	sqor = 7
+	sepI = 7
+	attm = 1
+	modCost = -449.84375
+	modMass = -0.072265625
+	modSize = 0,0,0
+	link = SSTU-SC-ENG-SRB-A_4293539512
+	sym = SSTU-SC-GEN-RBDC_4293627030
+	srfN = srfAttach,SSTU-SC-TANK-MFT-A_4294352862
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCustomRadialDecoupler
+		isEnabled = True
+		height = 12
+		diameter = 1.875
+		initializedResources = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-DC-D1
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnchoredDecoupler
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			EnableAction
+			{
+				actionGroup = None
+			}
+			DisableAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 21.09375
+		maxAmount = 21.09375
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SSTU-SC-ENG-SRB-A_4293539512
+	partName = Part
+	pos = -2.51684213,9.46704292,-0.00323001295
+	attPos = 0,0,0
+	attPos0 = 0.441890121,-0.0092010498,8.27003532E-09
+	rot = 3.43461934E-20,1.30498779E-06,-3.2395717E-14,-1
+	attRot = 0,0,0,1
+	attRot0 = 1.96383274E-13,1,-8.68901535E-21,0
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = True
+	istg = 8
+	resPri = 0
+	dstg = 19
+	sidx = 0
+	sqor = 8
+	sepI = 7
+	attm = 1
+	modCost = 6591.96777
+	modMass = 5.43024445
+	modSize = 0,0,0
+	sym = SSTU-SC-ENG-SRB-A_4293626902
+	srfN = srfAttach,SSTU-SC-GEN-RBDC_4293539640
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 1
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-SC-ENG-SRB-GeneralRocketry
+			upgrade = SSTU-SC-ENG-SRB-HeavyRocketry
+			upgrade = SSTU-SC-ENG-SRB-HeavierRocketry
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			LockAction
+			{
+				actionGroup = None
+			}
+			FreeAction
+			{
+				actionGroup = None
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUModularBooster
+		isEnabled = True
+		currentVariantName = A
+		currentMainName = SRB-A-3
+		currentNoseName = SRB-Nosecone-4
+		currentNozzleName = Nozzle-SRB-A
+		currentDiameter = 1.875
+		currentGimbalOffset = 0
+		currentNoseTexture = Adapter-SLS
+		currentMainTexture = SRB-Striped2
+		currentNozzleTexture = SRB-Striped
+		noseModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.1803922,0.1803922,0.1803922,0.1254902;0.9254902,0.9254902,0.9254902,0.1254902
+		bodyModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.9254902,0.9254902,0.9254902,0.1254902;0.5019608,0.5019608,0.5019608,0.6901961
+		mountModuleData = 0.9254902,0.9254902,0.9254902,0.1254902;0.1803922,0.1803922,0.1803922,0.1254902;0.9254902,0.9254902,0.9254902,0.1254902
+		initializedResources = True
+		thrustCurveData = 
+		presetCurveName = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+			upgrade = SSTU-MSRB-D1
+			upgrade = SSTU-MSRB-D2
+			upgrade = SSTU-MSRB-D3
+			upgrade = SSTU-MSRB-D4
+		}
+	}
+	MODULE
+	{
+		name = SSTUVolumeContainer
+		isEnabled = True
+		volume = 31007.8125
+		initializedResources = True
+		persistentData = standard,custom,1,SolidFuel,1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTUCollisionHandler
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SSTURecolorGUI
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 5271.328125
+		maxAmount = 5271.328125
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = HighGainAntenna5_4292200904
+	partName = Part
+	pos = -0.16609022,27.4228325,1.20605993
+	attPos = 0,0,0
+	attPos0 = 0,-1.24731636,1.20928693
+	rot = -0.49999997,0.50000006,0.49999997,-0.50000006
+	attRot = 0,0.707106709,0,-0.707106709
+	attRot0 = -0.49999997,0.50000006,0.49999997,-0.50000006
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 1
+	resPri = 0
+	dstg = 7
+	sidx = -1
+	sqor = -1
+	sepI = 1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,SSTU-SC-TANK-MFT-A_4294310440
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableAntenna
+		isEnabled = True
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 1
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = Custom01
+			}
+			ExtendAction
+			{
+				actionGroup = None
+			}
+			RetractAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
